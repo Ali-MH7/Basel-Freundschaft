@@ -1,1 +1,76 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basel Freundschaft</title>
+  <meta name="theme-color" content="#7c3aed">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f3ff;
+      color: #222;
+      margin: 0;
+      padding: 24px;
+    }
+    main {
+      max-width: 480px;
+      margin: 40px auto;
+      background: white;
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px #0001;
+    }
+    h1 { color: #6d28d9; }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 13px;
+      margin-top: 12px;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+    input { border: 1px solid #ccc; }
+    button {
+      border: 0;
+      background: #7c3aed;
+      color: white;
+      cursor: pointer;
+    }
+    #status { margin-top: 16px; color: #555; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>💜 Basel Freundschaft</h1>
+    <p>Finde neue Freunde in Basel und Umgebung.</p>
+
+    <h2>Willkommen!</h2>
+    <p>Hier entsteht ein kostenloser Ort für freundliche Gespräche.</p>
+
+    <label for="nickname">Wie möchtest du genannt werden?</label>
+    <input id="nickname" type="text" maxlength="30"
+      placeholder="Dein Vorname oder Spitzname">
+
+    <button id="start">Los geht's</button>
+    <p id="status">Diese Vorschau speichert deine Angaben nicht.</p>
+  </main>
+
+  <script>
+    document.getElementById("start").addEventListener("click", function () {
+      const name = document.getElementById("nickname").value.trim();
+      const status = document.getElementById("status");
+
+      if (!name) {
+        status.textContent = "Bitte gib zuerst einen Namen ein.";
+        return;
+      }
+
+      status.textContent = "Hallo " + name +
+        "! Willkommen bei Basel Freundschaft. 💜";
+    });
+  </script>
+</body>
+</html>
+
